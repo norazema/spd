@@ -12,7 +12,7 @@
 */
 
 
-Route::get('/','PortalController@home');
+Route::get('/','PortalController@home')->name('home');
 
 
 //user route

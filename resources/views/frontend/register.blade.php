@@ -6,11 +6,23 @@
     <section class="py-5">
       <div class="container">
        <form>
-        <h1>Sign In</h1><br>
+        <h1>Register New User</h1><br>
+         <div class="form-group row">
+           <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+           <div class="col-sm-10">
+             <input type="name" name="name" class="form-control" id="inputEmail3" placeholder="Name">
+           </div>
+         </div>
          <div class="form-group row">
            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
            <div class="col-sm-10">
              <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email">
+           </div>
+         </div>
+         <div class="form-group row">
+           <label for="inputEmail3" class="col-sm-2 col-form-label">IC No</label>
+           <div class="col-sm-10">
+             <input type="ic_no" name="ic_no" class="form-control" id="inputEmail3" placeholder="IC No without dash (-)">
            </div>
          </div>
          <div class="form-group row">
@@ -21,7 +33,7 @@
          </div>
          <div class="form-group row">
            <div class="col-sm-10">
-             <button type="submit" class="btn btn-primary">Sign in</button>
+             <button type="submit" class="btn btn-primary">Register</button>
            </div>
          </div>
        </form>
