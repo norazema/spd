@@ -5,8 +5,19 @@
     <!-- Page Content -->
     <section class="py-5">
       <div class="container">
-       <form>
-        <h1>Register New User</h1><br>
+       <h1>Register New User</h1><br>
+       @if($errors->any())
+        <div class="alert alert-danger">
+          <ul>
+            @foreach($errors->all() as $error)
+              <li>{{$error}}</li>
+            @endforeach
+          </ul>
+        </div>
+        @endif
+       <form method="POST" action="{{route('user.register.post')}}">
+        @csrf
+        
          <div class="form-group row">
            <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
            <div class="col-sm-10">
