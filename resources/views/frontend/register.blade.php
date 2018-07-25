@@ -6,6 +6,16 @@
     <section class="py-5">
       <div class="container">
        <h1>Register New User</h1><br>
+
+       @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+                <button type="button" class="close" data-dismiss="alert">
+                  <span>&times;</span>
+                </button>
+              </div>
+       @endif
+
        @if($errors->any())
         <div class="alert alert-danger">
           <ul>
@@ -15,25 +25,26 @@
           </ul>
         </div>
         @endif
+        
        <form method="POST" action="{{route('user.register.post')}}">
         @csrf
         
          <div class="form-group row">
            <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
            <div class="col-sm-10">
-             <input type="name" name="name" class="form-control" id="inputEmail3" placeholder="Name">
+             <input type="name" name="name" class="form-control" id="inputEmail3" placeholder="Name" value="{{ old('name') }}">
            </div>
          </div>
          <div class="form-group row">
            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
            <div class="col-sm-10">
-             <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email">
+             <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email" value="{{ old ('email') }}">
            </div>
          </div>
          <div class="form-group row">
            <label for="inputEmail3" class="col-sm-2 col-form-label">IC No</label>
            <div class="col-sm-10">
-             <input type="ic" name="ic" class="form-control" id="inputEmail3" placeholder="IC No without dash (-)">
+             <input type="ic" name="ic" class="form-control" id="inputEmail3" placeholder="IC No without dash (-)" value="{{ old ('ic') }}">
            </div>
          </div>
          <div class="form-group row">
